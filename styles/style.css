@@ -44,7 +44,6 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  outline: 1px dotted var(--color-white);
 }
 
 .cards {
@@ -93,7 +92,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-corner {
@@ -102,11 +101,16 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--selected-page-color);
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background-color: rgb(109, 106, 106);
 }
+
+/* ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-corner {
+  opacity: 0;
+  animation:  scrollFadeIn 3s ease-in-out forwards;
+} */
 
 
