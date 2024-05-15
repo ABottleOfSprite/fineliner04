@@ -11,6 +11,8 @@
     <a href="https://github.com/ABottleOfSprite/fineliner04/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=%5BBUG%5D">Report Bug</a>
     ·
     <a href="https://github.com/ABottleOfSprite/fineliner04/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=%5BFEATURE%5D">Request Feature</a>
+    ·
+    <a href="https://github.com/ABottleOfSprite/fineliner04/issues/new?assignees=&labels=question&projects=&template=question.md&title=%5BQUESTION%5D">Ask a question</a>
   </p>
 </div>
 
