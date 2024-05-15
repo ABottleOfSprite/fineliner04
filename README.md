@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/ABottleOfSprite/fineliner04">
-    <img src="images/logo.svg" alt="Logo" width="80" height="80">
+    <img src="images/logo.svg" alt="Logo">
   </a>
 
   <h3 align="center">fineliner04</h3>
@@ -20,7 +20,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="images/logo.svg" alt="Logo">
+<img src="images/screenshot.png" alt="screenshot">
 
 'fineliner04' is a modern navigation webpage created with the inspiration drawn from a simple tool - a fineliner of 0.4 mm width. 
 
