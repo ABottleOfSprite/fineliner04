@@ -2,7 +2,7 @@
   --color-primary: #29BF12;
   --color-secondary: #256EFF;
   --color-tertiary: #CA054D;
-  --color-quaternary: #CF5C36;
+--color-quaternary: #CF5C36;
   --selected-page-color: #fff;
 
   --color-success: #28a745;
@@ -19,6 +19,8 @@
 
 *, ::before, ::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -26,9 +28,8 @@ html {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.6rem;
-  line-height: 1.5;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: calc(1 + 0.5rem);
   color: var(--color-white);
   background-color: var(--color-dark);
   width: 100vw;
@@ -47,16 +48,15 @@ body {
 }
 
 .cards {
+  position: relative;
   cursor: pointer;
   transition: all 1s ease-in-out; 
   z-index: 100;
   width: 20vw;
   height: 80vh;
-  /* mix-blend-mode: multiply; */
 
   &:nth-child(1) {
     background-color: var(--color-primary);
-    /* mix-blend-mode: screen; */
   }
 
   &:nth-child(2) {
@@ -84,15 +84,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 15rem;
-  font-weight: 800;
+  text-align: center;
+  font-size: clamp(1rem, 15vw, 16rem);
+  font-weight: 900;
   z-index: -100;
   color: var(--color-white);
-  text-shadow: 0 0 10px var(--color-white);
+  /* text-shadow: 0 0 10px var(--color-white); */
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 1rem;
 }
 
 ::-webkit-scrollbar-corner {
@@ -101,16 +102,58 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--selected-page-color);
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 ::-webkit-scrollbar-track {
   background-color: rgb(109, 106, 106);
 }
 
-/* ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-corner {
-  opacity: 0;
-  animation:  scrollFadeIn 3s ease-in-out forwards;
-} */
+.cardInfo {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 1rem;
+  font-weight: 800;
+  z-index: 110;
+  color: var(--color-dark);
+  animation: infoFadeAnimation 900ms ease-in-out;
+}
 
+@keyframes infoFadeAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  gap: 1rem;
+  padding-inline: 5rem;
+  animation: scrollFadeAnimation linear;
+  animation-timeline: view();
+  animation-range-start: 0;
+  animation-range-end: 45vh
+}
+
+@keyframes scrollFadeAnimation {
+  0% {
+    opacity: 0;
+    scale: 0.5;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
