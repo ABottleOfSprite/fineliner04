@@ -20,7 +20,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](images/screenshot.png)
+<img src="images/logo.svg" alt="Logo">
 
 'fineliner04' is a modern navigation webpage created with the inspiration drawn from a simple tool - a fineliner of 0.4 mm width. 
 
