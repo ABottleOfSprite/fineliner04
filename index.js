@@ -37,7 +37,20 @@ cards.forEach((card, index) => {
 
 // Removing hover effect from all cards on mouse leave  
   card.addEventListener('mouseleave', function() {
-    cards.forEach(c => c.style.mixBlendMode = 'normal');// Resetting mix blend mode for all cards
+    cards.forEach((c,i) => {
+    
+      if (navigationClickedState) {
+        if (i === index) {
+          c.style.mixBlendMode = 'lighten';
+        }
+        else {
+          c.style.mixBlendMode = 'normal';
+        }
+      } else {
+        c.style.mixBlendMode = 'normal';
+      }
+
+    });// Resetting mix blend mode for all cards
 
     if (!navigationClickedState) {
       toggleTextLayer();
@@ -70,23 +83,21 @@ cards.forEach((card, index) => {
       if (i === index) {
         c.style.opacity = '1'; // Making the clicked card visible
         c.style.pointerEvents = 'auto'; // Enable pointer events for the clicked card
+        c.style.mixBlendMode = 'lighten';
       } else {
 
-        if (c.style.opacity === '1') {
+        if (navigationClickedState) {
           c.style.opacity = '0';
           c.style.pointerEvents = 'none'; // Disable pointer events for other cards, to make sure the hover effect wont be triggered
-          
           document.body.style.overflowY = 'visible';//Resetting the overflowY property to "visible"
           document.documentElement.style.setProperty('--selected-page-color', cardColor[index]);//Setting the selected page color
-
           toggleTextLayer(); //show the text layer if it is hidden
         } else{
-          c.style.opacity = '1';
           c.style.pointerEvents = 'auto'; //enable pointer events for all cards
-          
+          c.style.opacity = '1';
           window.scrollTo({ top: 0, behavior: 'smooth' });//When no page is selected, scroll to the top of the page, smoothly
-
           document.body.style.overflowY = 'hidden'; //make the body overflowY hidden
+          
         }        
       }
     });
@@ -100,9 +111,9 @@ window.scrollTo({ top: 0, behavior: 'smooth' });//Scrolling to the top of the pa
 function toggleTextLayer() {
   if (navigationClickedState) {
     textLayer.style.opacity = 1;
+    console.log("text layer visibility: ", textLayerVisibility);
     return;
   } else {
-    console.log("text layer visibility: ", textLayerVisibility);  
     if (textLayerVisibility) {
       textLayer.style.opacity = 0;
       textLayerVisibility = false;
@@ -110,14 +121,15 @@ function toggleTextLayer() {
       textLayer.style.opacity = 1;
       textLayerVisibility = true;
     }
+    console.log("text layer visibility: ", textLayerVisibility); 
   }
 }
 
 function toggleNavigationClickedState() {
-  console.log("navigation clicked state: ", navigationClickedState);
   if (navigationClickedState) {
     navigationClickedState = false;
   } else {
     navigationClickedState = true;
   }
+  console.log("navigation clicked state: ", navigationClickedState);
 }

@@ -115,6 +115,7 @@ body {
   top: 1rem;
   writing-mode: vertical-rl;
   text-orientation: upright;
+  text-transform: uppercase;
   font-size: 1rem;
   font-weight: 800;
   z-index: 110;
