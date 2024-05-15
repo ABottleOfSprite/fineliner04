@@ -1,11 +1,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/ABottleOfSprite/fineliner04">
-    <img src="images/logo.svg" alt="Logo">
-  </a>
 
-  <h3 align="center">fineliner04</h3>
+  <h1 align="center">fineliner04</h1>
 
   <p align="center">
     A colorful, modern navigation page!
